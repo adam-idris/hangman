@@ -1,48 +1,46 @@
-#%% Instructions
-
-# Step 1. Create a class called Hangman. [X]
-
-# Step 2. Inside the class, create an __init__ method to initialise the attributes of the class. Pass in word_list and num_lives as parameters. 
-#         Make num_lives a default parameter and set the value to 5. [x]
-
-# Step 3. Initialise the following attributes:
-
-# word: The word to be guessed, picked randomly from the word_list. Remember to import the random module into your script.
-
-# word_guessed: list - A list of the letters of the word, with _ for each letter not yet guessed. 
-#               For example, if the word is 'apple', the word_guessed list would be ['_', '_', '_', '_', '_']. 
-#               If the player guesses 'a', the list would be ['a', '_', '_', '_', '_'].
-
-# num_letters: int - The number of UNIQUE letters in the word that have not been guessed yet.
-
-# num_lives: int - The number of lives the player has at the start of the game.
-
-# word_list: list - A list of words.
-
-# list_of_guesses: list - A list of the guesses that have already been tried. Set this to an empty list initially.
-
-
-#%%
-
 import random
 
-class Hangman():
+class Hangman:
     def __init__(self, word_list, num_lives=5):
-        pass
+        self.word_list = word_list
+        self.num_lives = num_lives
         
     def word(self):
-        pass
+        self.word = random.choice(self.word_list)
         
-    def word_guessed(self):
-        pass
+    def word_guessed(self, letter_guessed):
+        self.word_guessed = []
+        for i in range(0, self.word):
+            if self.word[i] == letter_guessed:
+                self.word_guessed[i] = letter_guessed
+            else:
+                self.word_guessed[i] = ('_')
+        
     
     def num_letters(self):
         pass
     
     def word_list(self):
-        pass
+        self.word_list = ["apple", "banana", "peach", "orange", "mango"]
     
     def list_of_guesses(self):
-        pass
-            
+        self.list_of_guesses = []
         
+    def check_guess(self, guess):
+        self.guess = guess.lower()
+        if self.guess in self.word:
+            print("Good guess! {} is in the word.".format(guess))
+            
+    def ask_for_input(self):
+        while True:
+            guess = input("Please enter a single letter: ")
+            
+            if len(guess) != 1 and guess.isalpha() == False:
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            
+            elif guess in self.list_of_guesses == True:
+                print("You already tried that letter!")
+            
+            else:
+                self.list_of_guesses.append(self.check_guess(guess))
+                
