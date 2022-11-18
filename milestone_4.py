@@ -6,8 +6,12 @@ class Hangman:
         self.word_list = word_list
         self.num_lives = num_lives
         
+    def word_list(self):
+        self.word_list = ["apple", "banana", "peach", "orange", "mango"]
+        
     def word(self):
-        return random.choice(self.word_list)
+        self.word = random.choice(self.word_list)
+
 
     def word_guessed(self, letter_guessed):
         self.letter_guessed = letter_guessed
@@ -29,9 +33,6 @@ class Hangman:
             if self.unique_letters_list[i] in self.letter_list:
                 self.unique_letters_left -= 1
         return self.unique_letters_left
-    
-    def word_list(self):
-        self.word_list = ["apple", "banana", "peach", "orange", "mango"]
     
     def list_of_guesses(self):
         self.guess_list = []
