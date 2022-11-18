@@ -32,7 +32,7 @@ class Hangman:
         return self.unique_letters_left
     
     def word_list(self):
-        self.list_used = ["apple", "banana", "peach", "orange", "mango"]
+        self.word_list = ["apple", "banana", "peach", "orange", "mango"]
     
     def list_of_guesses(self):
         self.guess_list = []
