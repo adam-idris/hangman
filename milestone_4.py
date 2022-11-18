@@ -7,8 +7,7 @@ class Hangman:
         self.num_lives = num_lives
         
     def word(self):
-        self.word = random.choice(self.word_list)
-        print(self.word)
+        return random.choice(self.word_list)
 
     def word_guessed(self, letter_guessed):
         self.letter_guessed = letter_guessed
