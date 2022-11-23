@@ -14,7 +14,8 @@ class Hangman:
         
       
     def check_guess(self, guess):
-        self.guess = guess.lower()
+        self.guess = guess
+        self.guess = self.guess.lower()
         if self.guess in self.word:
             print("Good guess! {} is in the word.".format(self.guess))
             
@@ -25,7 +26,7 @@ class Hangman:
             if len(guess) != 1 and guess.isalpha() == False:
                 print("Invalid letter. Please, enter a single alphabetical character.")
             
-            elif guess in self.list_of_guesses == True:
+            elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
             
             else:
