@@ -43,20 +43,19 @@ class Hangman:
             else:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
-                
-fruits = ["apple", "banana", "peach", "orange", "mango"]
-game = Hangman(fruits, num_lives=5)
-game.ask_for_input()
+                break
 
 def play_game(word_list):
     game = Hangman(word_list, num_lives=5)
     while True:
         if game.num_lives == 0:
             print("You lost!")
+            break
         elif game.num_lives > 0:
             game.ask_for_input()
         else:
             print("Congratulations. You won the game!")
+            break
 
 fruits = ["apple", "banana", "peach", "orange", "mango"]
 
