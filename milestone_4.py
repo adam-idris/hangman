@@ -35,6 +35,7 @@ class Hangman:
             
             if len(guess) != 1 or guess.isalpha() == False:
                 print("Invalid letter. Please, enter a single alphabetical character.")
+                break
                 
             
             elif guess in self.list_of_guesses:
