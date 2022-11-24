@@ -20,17 +20,21 @@ class Hangman:
             print("Good guess! {} is in the word.".format(self.guess))
             
     def ask_for_input(self):
+        
         while True:
             guess = input("Please enter a single letter: ")
             
-            if len(guess) != 1 and guess.isalpha() == False:
+            if len(guess) != 1 or guess.isalpha() == False:
                 print("Invalid letter. Please, enter a single alphabetical character.")
+                
             
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
             
             else:
-                self.list_of_guesses.append(self.check_guess(guess))
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
                 
 fruits = ["apple", "banana", "peach", "orange", "mango"]
 game = Hangman(fruits, num_lives=5)
