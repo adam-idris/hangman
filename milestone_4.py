@@ -43,7 +43,6 @@ class Hangman:
             else:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
-                break
                 
 fruits = ["apple", "banana", "peach", "orange", "mango"]
 game = Hangman(fruits, num_lives=5)
