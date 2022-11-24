@@ -26,7 +26,7 @@ class Hangman:
             self.num_lives -= 1
             print("Sorry {} is not in the word.".format(self.guess))
             print("You have {} lives left".format(self.num_lives))
-        self.list_of_guesses.append(self.guess)         
+        self.list_of_guesses.append(self.guess)       
             
     def ask_for_input(self):
         
