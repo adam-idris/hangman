@@ -30,4 +30,6 @@
    return self.man
 ```
 
+![My Image](hangman.PNG)
+
 - check_guess: Takes an argument of 'guess' which is the letter that has been guessed by the user. For consistency, the letter is always converted to lower case. If the letter guessed is in the word, the '_' in the word_guessed attribute is replaced with the corresponding letter using indexing and the num_letters attribute is decreased by one. A message is printed to show how many. However, in the instance of an incorrect guess, the num_lives attribute decreases by one and the picture of the hangman is printed.
