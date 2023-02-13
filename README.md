@@ -1,35 +1,32 @@
 # Hangman
-    Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
+    Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts. This is an implementation of the Hangman game, where the computer chooses a random word from a list and the user tries to guess it. 
 
-    This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
+    The Hangman game is written using object-oriented programming and loops.
 
-# Word List
-    A predefined list of fruits are stored in the variable word_list. Using the random function, a random fruit is selected from the list. This will be the word that the user is trying to guess.
+## Initialised Attributes
 
-# Input
-    The input function is used to ask the user to enter a single letter. An if statement is used to verify that the only one letter has been entered and that it is in the alphabet.
+    word: The word to be guessed, picked randomly from the word_list.
 
-# Functions
-    The check_guess function first changes the input to lowercase and then determines whether the user has entered a letter contained within the random word. If the letter is not in the word, the function prints a message to the user to try again. If the letter is in the word, the function prints a message telling the user that the letter is in the word.
+    word_guessed: A list of the letters of the word, with _ for each letter not yet guessed. For example, if the word is 'apple', the word_guessed list would be ['_', '_', '_', '_', '_']. If the player guesses 'a', the list would be ['a', '_', '_', '_', '_'].
 
-    The ask_for_input function verifies that the user has input a single letter and continues to loop until the user inputs a valid letter. The check_guess function is nested within the ask_for_input function so that validation and verification of the input is performed.
+    num_letters: The number of UNIQUE letters in the word that have not been guessed yet.
 
-    The check_guess function first changes the input to lowercase and then determines whether the user has entered a letter contained within the random word. If the letter is not in the word, the function prints a message to the user to try again. If the letter is in the word, the function prints a message telling the user that the letter is in the word.
+    num_lives: The number of lives the player has at the start of the game.
 
-    The ask_for_input function verifies that the user has input a single letter and continues to loop until the user inputs a valid letter. The check_guess function is nested within the ask_for_input function so that validation and verification of the input is performed.
-        
-    The check_guess function first changes the input to lowercase and then determines whether the user has entered a letter contained within the random word. If the letter is not in the word, the function prints a message to the user to try again. If the letter is in the word, the function prints a message telling the user that the letter is in the word.
+    word_list: A list of words the computer will randomly choose from.
 
-    The ask_for_input function verifies that the user has input a single letter and continues to loop until the user inputs a valid letter. The check_guess function is nested within the ask_for_input function so that validation and verification of the input is performed.
-        
-    The check_guess function first changes the input to lowercase and then determines whether the user has entered a letter contained within the random word. If the letter is not in the word, the function prints a message to the user to try again. If the letter is in the word, the function prints a message telling the user that the letter is in the word.
+    list_of_guesses: A list of the guesses that have already been tried.
 
-    The ask_for_input function verifies that the user has input a single letter and continues to loop until the user inputs a valid letter. The check_guess function is nested within the ask_for_input function so that validation and verification of the input is performed.
-        
-    The check_guess function first changes the input to lowercase and then determines whether the user has entered a letter contained within the random word. If the letter is not in the word, the function prints a message to the user to try again. If the letter is in the word, the function prints a message telling the user that the letter is in the word.
+    man: An empty string which is to be replaced with a picture of the hangman depending on how many lives have been lost.
 
-    The ask_for_input function verifies that the user has input a single letter and continues to loop until the user inputs a valid letter. The check_guess function is nested within the ask_for_input function so that validation and verification of the input is performed.
-       
-    The check_guess function first changes the input to lowercase and then determines whether the user has entered a letter contained within the random word. If the letter is not in the word, the function prints a message to the user to try again. If the letter is in the word, the function prints a message telling the user that the letter is in the word.
+## Methods
 
-    The ask_for_input function verifies that the user has input a single letter and continues to loop until the user inputs a valid letter. The check_guess function is nested within the ask_for_input function so that validation and verification of the input is performed.
+    hangman_picture: Takes in an argument of num_lives and returns a picture of the hangman that reflects the stage of the game. The code snippet shows the image when there are no lives left and the player has lost the game.
+
+    ```python
+        elif num_lives == 0:
+        self.man = '  +---+\n  |   |\n  O   |\n /|\  |\n / \  |\n      |\n======='
+        return self.man
+    ```
+
+    check_guess: Takes an argument of 'guess' which is the letter that has been guessed by the user. For consistency, the letter is always converted to lower case. If the letter guessed is in the word, the '_' in the word_guessed attribute is replaced with the corresponding letter using indexing and the num_letters attribute is decreased by one. A message is printed to show how many. However, in the instance of an incorrect guess, the num_lives attribute decreases by one and the picture of the hangman is printed.
