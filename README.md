@@ -33,3 +33,17 @@
 ![My Image](hangman.PNG)
 
 - check_guess: Takes an argument of 'guess' which is the letter that has been guessed by the user. For consistency, the letter is always converted to lower case. If the letter guessed is in the word, the '_' in the word_guessed attribute is replaced with the corresponding letter using indexing and the num_letters attribute is decreased by one. A message is printed to show how many. However, in the instance of an incorrect guess, the num_lives attribute decreases by one and the picture of the hangman is printed.
+
+- ask_for_input: Uses a while loop to keep the code running until the game is complete. Asks the user to input their guessed letter but validates the input by ensuring the input is a single letter. If it does not mee the requirements, a message is displayed telling the user to try again. Another form of validation is to ensure that the same input is not repeated numerous times. Otherwise, if the conditions are met, the code will run as expected.
+
+## Functions
+
+- play_game: Uses a while loop to keep the code running as long as the number of unique, unguessed letters in the word is greater than zero. The code will break if the number of lives equal zero, which means he user has lost the game. In any other instance, the code will break as this means the user has won the game.
+
+## Conclusions
+
+> Some improvements to make in the future
+
+- Enhance the game's visuals.
+- Increase the number of words in the words list.
+- Perhaps give the user an option to choose between different categories of words.
