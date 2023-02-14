@@ -40,6 +40,20 @@
 
 - play_game: Uses a while loop to keep the code running as long as the number of unique, unguessed letters in the word is greater than zero. The code will break if the number of lives equal zero, which means he user has lost the game. In any other instance, the code will break as this means the user has won the game.
 
+```python
+def play_game(word_list):
+    game = Hangman(word_list, num_lives=5)
+    while True:
+        if game.num_lives == 0:
+            print("You lost!")
+            break
+        elif game.num_letters > 0:
+            game.ask_for_input()
+        else:
+            print("Congratulations. You won the game!")
+            break
+```
+
 ## Conclusions
 
 > Some improvements to make in the future
