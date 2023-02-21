@@ -60,4 +60,5 @@ def play_game(word_list):
 
 - Enhance the game's visuals.
 - Increase the number of words in the words list.
+- Give the user the ability to guess the entire word once they are sure
 - Perhaps give the user an option to choose between different categories of words.
